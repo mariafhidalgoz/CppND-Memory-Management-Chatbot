@@ -14,15 +14,8 @@ private:
     wxBoxSizer *_dialogSizer;
     wxBitmap _image;
 
-    //// STUDENT CODE
-    ////
-
     // define unique smart pointer
-    // ChatLogic *_chatLogic;
     std::unique_ptr<ChatLogic> _chatLogic;
-
-    ////
-    //// EOF STUDENT CODE
 
 public:
     // constructor / destructor

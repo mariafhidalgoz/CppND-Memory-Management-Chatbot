@@ -34,17 +34,8 @@ ChatBot::ChatBot(std::string filename)
 ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
-
-    // deallocate heap memory
-    // if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
-    // {
-    //     delete _image;
-    //     _image = NULL;
-    // }
 }
 
-//// STUDENT CODE
-////
 // copy constructor
 ChatBot::ChatBot(const ChatBot &source)
 {
@@ -100,8 +91,6 @@ ChatBot& ChatBot::operator=(ChatBot &&source)
     source._rootNode = nullptr;
     return *this;
 }
-////
-//// EOF STUDENT CODE
 
 void ChatBot::ReceiveMessageFromUser(std::string message)
 {

@@ -115,11 +115,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     // allow for PNG images to be handled
     wxInitAllImageHandlers();
 
-    //// STUDENT CODE
-    ////
-
     // create chat logic instance
-    // _chatLogic = new ChatLogic(); 
     // with unique smart pointer
     _chatLogic = std::make_unique<ChatLogic>();
 
@@ -128,21 +124,11 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
 
     // load answer graph from file
     _chatLogic->LoadAnswerGraphFromFile(dataPath + "src/answergraph.txt");
-
-    ////
-    //// EOF STUDENT CODE
 }
 
 ChatBotPanelDialog::~ChatBotPanelDialog()
 {
-    //// STUDENT CODE
-    ////
-
-    // deallocate _chatLogic is not necessary in unique smart pointer, it is already on spart pointer
-    // delete _chatLogic;
-
-    ////
-    //// EOF STUDENT CODE
+    std::cout << "ChatBotPanelDialog Destructor" << std::endl;
 }
 
 void ChatBotPanelDialog::AddDialogItem(wxString text, bool isFromUser)
