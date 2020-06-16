@@ -20,7 +20,8 @@ private:
     // std::vector<GraphNode *> _nodes;
     // define unique smart pointer
     std::vector<std::unique_ptr<GraphNode>>  _nodes;
-    std::vector<GraphEdge *> _edges;
+    // it was used to delete all edges, but now is not necesary with unique smart pointer
+    // std::vector<GraphEdge *> _edges;
 
     ////
     //// EOF STUDENT CODE
