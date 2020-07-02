@@ -40,7 +40,7 @@ ChatBot::~ChatBot()
 ChatBot::ChatBot(const ChatBot &source)
 {
     std::cout << "ChatBot Copying content of instance " << &source << " to instance " << this << std::endl;
-    _image = source._image;
+    _image = new wxBitmap(source._image->ConvertToImage());
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _chatLogic->SetChatbotHandle(this);
@@ -53,7 +53,7 @@ ChatBot& ChatBot::operator=(const ChatBot &source)
     if (this == &source)
         return *this;
     delete _image;
-    _image = source._image;
+    _image = new wxBitmap(source._image->ConvertToImage());
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _chatLogic->SetChatbotHandle(this);
